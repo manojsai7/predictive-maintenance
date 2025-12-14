@@ -8,14 +8,8 @@ xgboost>=1.5.0
 torch>=1.10.0
 tensorflow>=2.8.0
 
-# Time Series
-tsfresh>=0.19.0
-
 # Feature Engineering & Data Processing
 scipy>=1.7.0
-
-# Model Tracking & Experimentation
-mlflow>=1.20.0
 
 # API & Web Service
 fastapi>=0.70.0
@@ -44,3 +38,7 @@ flake8>=4.0.0
 # Notebooks
 jupyter>=1.0.0
 ipywidgets>=7.6.0
+
+# Optional dependencies (install separately if needed)
+# tsfresh>=0.19.0  # For advanced time-series feature extraction
+# mlflow>=1.20.0   # For experiment tracking and model registry

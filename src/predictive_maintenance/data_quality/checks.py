@@ -3,6 +3,7 @@ import pandas as pd
 import numpy as np
 from typing import Dict, List, Optional, Tuple
 from dataclasses import dataclass
+from scipy import stats
 
 
 @dataclass
@@ -189,6 +190,3 @@ class DataValidator:
         
         time_series = pd.to_datetime(df[time_col])
         return time_series.is_monotonic_increasing
-
-
-from scipy import stats

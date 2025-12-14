@@ -1,0 +1,42 @@
+# Model Configuration
+model:
+  type: random_forest
+  n_estimators: 100
+  max_depth: 10
+  random_state: 42
+
+# Feature Engineering
+features:
+  window_size: 50
+  sensor_columns:
+    - sensor_1
+    - sensor_2
+    - sensor_3
+    - sensor_4
+    - sensor_5
+    - sensor_6
+    - sensor_7
+    - sensor_8
+    - sensor_9
+    - sensor_10
+
+# Data Quality
+data_quality:
+  outlier_std: 3.0
+  missing_threshold: 0.5
+  
+# Drift Detection
+drift_detection:
+  threshold: 0.05
+  window_size: 100
+
+# Inference Service
+inference:
+  host: 0.0.0.0
+  port: 8000
+  model_path: models/rul_predictor_rf.pkl
+
+# MLflow
+mlflow:
+  tracking_uri: http://localhost:5000
+  experiment_name: predictive_maintenance

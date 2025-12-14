@@ -34,9 +34,10 @@ def test_check_missing_values():
 
 def test_detect_outliers():
     """Test outlier detection."""
+    # Create data with clear outliers
     df = pd.DataFrame({
-        'col1': [1, 2, 3, 4, 100],  # 100 is an outlier
-        'col2': [10, 11, 12, 13, 14]  # No outliers
+        'col1': [50, 51, 52, 53, 54, 55, 56, 57, 58, 200],  # 200 is an outlier
+        'col2': [10, 11, 12, 13, 14, 15, 16, 17, 18, 19]  # No outliers
     })
     
     checker = DataQualityChecker(outlier_std=2.0)
@@ -100,7 +101,7 @@ def test_validate_ranges():
 def test_validate_temporal_consistency():
     """Test temporal consistency validation."""
     df = pd.DataFrame({
-        'timestamp': pd.date_range('2024-01-01', periods=5, freq='H')
+        'timestamp': pd.date_range('2024-01-01', periods=5, freq='h')
     })
     
     validator = DataValidator()

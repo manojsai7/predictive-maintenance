@@ -47,7 +47,7 @@ class DataProcessor:
         if strategy == "interpolate":
             return data.interpolate(method='linear', limit_direction='both')
         elif strategy == "forward_fill":
-            return data.fillna(method='ffill').fillna(method='bfill')
+            return data.ffill().bfill()
         elif strategy == "drop":
             return data.dropna()
         else:
@@ -159,7 +159,7 @@ class DataProcessor:
             for lag in lags:
                 result[f'{col}_lag_{lag}'] = data[col].shift(lag)
         
-        return result.fillna(method='bfill')
+        return result.bfill()
     
     def extract_features(
         self, 
